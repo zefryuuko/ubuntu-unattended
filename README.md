@@ -44,7 +44,7 @@ $ sudo ./create-unattended-iso.sh
 
   [1] Ubuntu 12.04.4 LTS Server amd64 - Precise Pangolin
   [2] Ubuntu 14.04.2 LTS Server amd64 - Trusty Tahr
-  [3] Ubuntu 16.04.1 Server LTS amd64 - Xenial Xerus
+  [3] Ubuntu 16.04.1 LTS Server amd64 - Xenial Xerus
   [4] Ubuntu 18.04.2 LTS Server amd64 - Bionic Beaver
 
  please enter your preference: [1|2|3|4]:
