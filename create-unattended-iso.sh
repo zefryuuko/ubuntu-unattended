@@ -71,10 +71,10 @@ tmphtml=$tmp/tmphtml
 rm $tmphtml >/dev/null 2>&1
 wget -O $tmphtml 'http://releases.ubuntu.com/' >/dev/null 2>&1
 
-prec=$(fgrep Precise $tmphtml | head -1 | awk '{print $3}')
-trus=$(fgrep Trusty $tmphtml | head -1 | awk '{print $3}')
-xenn=$(fgrep Xenial $tmphtml | head -1 | awk '{print $3}')
-bion=$(fgrep Bionic $tmphtml | head -1 | awk '{print $3}')
+prec="12.04.5"
+trus="14.04.6"
+xenn="16.04.6"
+bion="18.04.2"
 
 
 
@@ -153,7 +153,7 @@ fi
 seed_file="netson.seed"
 if [[ ! -f $tmp/$seed_file ]]; then
     echo -n " downloading $seed_file: "
-    download "https://raw.githubusercontent.com/netson/ubuntu-unattended/master/$seed_file"
+    download "https://raw.githubusercontent.com/zefryuuko/ubuntu-unattended/master/$seed_file"
 fi
 
 # install required packages
@@ -207,7 +207,7 @@ sed -i -r 's/timeout\s+[0-9]+/timeout 1/g' $tmp/iso_new/isolinux/isolinux.cfg
 
 # set late command
 
-   late_command="chroot /target curl -L -o /home/$username/start.sh https://raw.githubusercontent.com/netson/ubuntu-unattended/master/start.sh ;\
+   late_command="chroot /target curl -L -o /home/$username/start.sh https://raw.githubusercontent.com/zefryuuko/ubuntu-unattended/master/start.sh ;\
      chroot /target chmod +x /home/$username/start.sh ;"
 
 
