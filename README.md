@@ -1,4 +1,5 @@
 # Unattended Ubuntu ISO Maker
+A fork of [netson/ubuntu-unattended](netson/ubuntu-unattended)
 
 This simple script will create an unattended Ubuntu ISO from start to finish. It will ask you a few questions once, and embed your answers into a remastered ISO file for you to use over and over again.
 
@@ -17,16 +18,17 @@ The script supports the following Ubuntu editions out of the box:
 * Ubuntu 16.04 Server LTS amd64 - Xenial Xerus
 * Ubuntu 18.04 Server LTS amd64 - Bionic Beaver
 
-Script automatically chooses the latest current image by parsing http://releases.ubuntu.com page.
-
 This script has been tested on and with these three versions as well, but I see no reason why it shouldn't work with other Ubuntu editions. Other editions would require minor changes to the script though.
+
+## What I modified from the original script
+This script automatically installs openssh-server so using this on headless machine is possible. The automatic image choosing from the original script is broken (maybe http://releases.ubuntu.com/ page changed) and I dont know how to fix it. So the script will use fixed version number.
 
 ## Usage
 
 * From your command line, run the following commands:
 
 ```
-$ wget https://raw.githubusercontent.com/netson/ubuntu-unattended/master/create-unattended-iso.sh
+$ wget https://raw.githubusercontent.com/zefryuuko/ubuntu-unattended/master/create-unattended-iso.sh
 $ chmod +x create-unattended-iso.sh
 $ sudo ./create-unattended-iso.sh
 ```
@@ -43,8 +45,9 @@ $ sudo ./create-unattended-iso.sh
   [1] Ubuntu 12.04.4 LTS Server amd64 - Precise Pangolin
   [2] Ubuntu 14.04.2 LTS Server amd64 - Trusty Tahr
   [3] Ubuntu 16.04.1 Server LTS amd64 - Xenial Xerus
+  [4] Ubuntu $bion LTS Server amd64 - Bionic Beaver
 
- please enter your preference: [1|2|3]:
+ please enter your preference: [1|2|3|4]:
 ```
 
 * Enter your desired timezone; the default is *Europe/Amsterdam*:
